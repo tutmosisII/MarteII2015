@@ -6,6 +6,7 @@
 package co.edu.uelbosque.sistemas.swii.c1.marte.unittest;
 
 import co.edu.uelbosque.sistemas.swii.c1.marte.ManejadorArchivo;
+import co.edu.uelbosque.sistemas.swii.c1.marte.Tablero;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.testng.Assert;
@@ -31,11 +32,11 @@ public class ProbarManejadorDeArchivo {
     
     @Test
     public void laPrimerLineaDelArchivoEsCorrecta() throws FileNotFoundException, IOException{
-        String experada="7 6";
+        Tablero texperado=new Tablero(7,6);
         ManejadorArchivo manejador=new ManejadorArchivo();
         manejador.setRutaArchivo("src/main/resources/reglas.txt");
-        String linea1=manejador.getPrimeraLinea();
-        Assert.assertEquals(linea1, experada);
+        Tablero t=manejador.getPrimeraLinea();
+        Assert.assertTrue(texperado.equals(t));
     }
     
 }
