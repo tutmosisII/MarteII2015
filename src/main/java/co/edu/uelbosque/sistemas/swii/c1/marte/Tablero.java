@@ -7,7 +7,7 @@ package co.edu.uelbosque.sistemas.swii.c1.marte;
 
 /**
  *
- * @author Alejandro
+ * @asuthor Alejandro
  */
 public class Tablero {
 
