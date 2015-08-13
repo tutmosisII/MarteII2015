@@ -29,13 +29,14 @@ public class PanelMarte extends JComponent {
     
     @Override
     public void paintComponent(Graphics g){
-    g.drawLine(tablero.getX()*100, tablero.getY(), 100, tablero.getX());
-    
+        System.out.print(tablero.getX());
+    g.drawLine(tablero.getX()*50, tablero.getY()*50, 100, tablero.getY()*50);
+    g.drawLine(tablero.getX()*100, tablero.getY()*50, 100, tablero.getX());
     }
 
     void montarTablero(Tablero t) {
 
-        PanelMarte p = new PanelMarte();
+        PanelMarte p = new PanelMarte(t);
         jf.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         jf.getContentPane().setLayout(new BorderLayout());
