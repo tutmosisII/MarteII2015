@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 /**
  *
- * @author Alejandro
+ * @author scabrera
  */
 public class ProbarManejadorDeArchivo {
     
