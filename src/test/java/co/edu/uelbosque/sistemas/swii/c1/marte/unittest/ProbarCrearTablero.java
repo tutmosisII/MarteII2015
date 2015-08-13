@@ -7,6 +7,7 @@ package co.edu.uelbosque.sistemas.swii.c1.marte.unittest;
 
 
 import co.edu.uelbosque.sistemas.swii.c1.marte.*;
+import java.io.FileNotFoundException;
 import org.testng.annotations.Test;
 
 /**
@@ -25,9 +26,15 @@ public class ProbarCrearTablero {
     }
     
     @Test
-    public void probarDibujarPlano(){
+    public void probarDibujarPlano() throws Exception{
     
         PanelMarte pm = new PanelMarte(new Tablero(7,6));
+    
+    }
+    @Test (expectedExceptions = Exception.class)
+    public void probarTamanoDeTablero() throws Exception{
+    PanelMarte pn = new PanelMarte(new Tablero(-2, -8));
+      
     
     }
     
