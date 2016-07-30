@@ -32,10 +32,19 @@ public class ProbarManejadorDeArchivo {
     
     @Test
     public void laPrimerLineaDelArchivoEsCorrecta() throws FileNotFoundException, IOException{
-        Tablero texperado=new Tablero(7,6);
+        String texperado="7 6";
         ManejadorArchivo manejador=new ManejadorArchivo();
         manejador.setRutaArchivo("src/main/resources/reglas.txt");
-        Tablero t=manejador.getPrimeraLinea();
+        String t=manejador.getPrimeraLinea();
+        Assert.assertTrue(texperado.equals(t));
+    }
+    
+    @Test
+    public void laLineDeCoordenadasEsCorrecta() throws FileNotFoundException, IOException{
+        String texperado="1 7 N";
+        ManejadorArchivo manejador=new ManejadorArchivo();
+        manejador.setRutaArchivo("src/main/resources/reglas.txt");
+        String t=manejador.getSegundaLinea();
         Assert.assertTrue(texperado.equals(t));
     }
     
