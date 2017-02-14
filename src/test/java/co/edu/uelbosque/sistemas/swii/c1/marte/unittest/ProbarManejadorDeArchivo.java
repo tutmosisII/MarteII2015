@@ -19,13 +19,13 @@ import org.testng.annotations.Test;
 public class ProbarManejadorDeArchivo {
     
     @Test(expectedExceptions = FileNotFoundException.class)
-    public void elArchivoNoExiste() throws FileNotFoundException{
+    public void elArchivoNoExiste() throws FileNotFoundException, IOException{
         ManejadorArchivo manejador=new ManejadorArchivo();
-        manejador.setRutaArchivo("reglas.txt");
+        manejador.setRutaArchivo("reglas2.txt");
     }
     
     @Test
-    public void elArchivoExiste() throws FileNotFoundException{
+    public void elArchivoExiste() throws FileNotFoundException, IOException{
         ManejadorArchivo manejador=new ManejadorArchivo();
         manejador.setRutaArchivo("src/main/resources/reglas.txt");
     }
@@ -40,12 +40,12 @@ public class ProbarManejadorDeArchivo {
     }
     
     @Test
-    public void laLineDeCoordenadasEsCorrecta() throws FileNotFoundException, IOException{
+    public void obtenerPrimerRobot() throws FileNotFoundException, IOException{
         String texperado="1 7 N";
         ManejadorArchivo manejador=new ManejadorArchivo();
         manejador.setRutaArchivo("src/main/resources/reglas.txt");
-        String t=manejador.getSegundaLinea();
-        Assert.assertTrue(texperado.equals(t));
+        String t=manejador.getNextRobot();
+        Assert.assertEquals(t, texperado);
     }
     
 }
